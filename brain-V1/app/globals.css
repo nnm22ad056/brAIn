@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background: #ffffff;
+  --foreground: #13171e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0b0e;
+    --foreground: #ededed;
+    --font-geist-sans: 'Geist Sans', sans-serif;
+    --font-geist-mono: 'Geist Mono', monospace;
+  }
+  
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+  scroll-behavior: smooth;
+  
+}
+
+
+@keyframes glowing-line-animate {
+  0% {
+    width: 0%; /* Start from the center */
+  }
+  100% {
+    width: 80%; /* End at the desired width */
+  }
+}
+
+.glowing-line {
+  position: relative;
+  height: 2px;
+  width: 0%; /* Initial width at 0% */
+  background: #00be77;
+  box-shadow: 0 0 8px 2px rgba(0, 190, 119, 0.8);
+  margin: 6rem auto; /* Center the line horizontally */
+  border-radius: 9999px;
+  animation: glowing-line-animate 1s ease-out forwards; /* Animation applied */
+  
+  /* Fading mask from center */
+  mask-image: linear-gradient(to right, transparent, white 30%, white 70%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 30%, white 70%, transparent);
+}
+
+
+/* Global CSS */
+.glow {
+  animation: pulse-glow 2s infinite;
+  filter: drop-shadow(0 0 10px #39865b) drop-shadow(0 0 20px #39865b);
+}
+
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 5px #39865b) drop-shadow(0 0 10px #39865b);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #39865b) drop-shadow(0 0 40px #39865b);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #39865b) drop-shadow(0 0 10px #39865b);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

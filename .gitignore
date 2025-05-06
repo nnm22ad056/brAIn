@@ -1,0 +1,39 @@
+# === Python / Flask ===
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+*.py[cod]
+*.so
+
+# Ignore the model .h5
+brainAI/app/models/*.h5
+
+# Ignore virtual environment (assuming it's in brainAI/)
+brainAI/venv/
+
+# Environment variables
+brainAI/.env
+
+# Flask cache & IDE metadata
+instance/
+.env
+*.env
+
+# === Node.js / Next.js ===
+brain-V1/node_modules/
+brain-V1/.next/
+brain-V1/.env.local
+brain-V1/.env*
+
+# === OS / Editor junk ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# === Logs ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
